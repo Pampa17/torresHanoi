@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Torres de Hanoi</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="app.js" type="module" defer></script>
+    </head>
+    <body>
+        <h1>Torres de Hanoi</h1>
+        <div class="container1">
+            <p>
+                Las Torres de Hanói es un rompecabezas o juego matemático inventado en 1883 por el matemático francés <strong>Édouard Lucas</strong>​ Este juego
+                de mesa individual consiste en un número de discos perforados de radio creciente que se apilan insertándose en uno de los tres postes fijados a
+                un tablero. El objetivo del juego es trasladar la pila a otro de los postes siguiendo ciertas reglas, como que no se puede colocar un disco más
+                grande encima de un disco más pequeño.
+            </p>
+            <h3>Descripción</h3>
+            <p>
+                El juego, en su forma más tradicional, consiste en tres postes verticales. En uno de los postes se apila un número indeterminado de discos
+                perforados por su centro, que determinará la complejidad de la solución. Por regla general se consideran siete discos. Los discos se apilan
+                sobre uno de los postes en tamaño decreciente de abajo arriba. No hay dos discos iguales, y todos ellos están apilados de mayor a menor radio en
+                uno de los postes, quedando los otros dos postes vacíos. El juego consiste en pasar todos los discos desde el poste ocupado (es decir, el que
+                posee la torre) a uno de los otros postes vacíos. Para realizar este objetivo, es necesario seguir tres simples reglas:
+                <br /><br />
+                1. Solo se puede mover un disco cada vez y para mover otro los demás tienen que estar en postes. <br />
+                2. Un disco de mayor tamaño no puede estar sobre uno más pequeño que él mismo. <br />
+                3. Solo se puede desplazar el disco que se encuentre arriba en cada poste.
+            </p>
+        </div>
+        <br />
+        <div class="container">
+            <div class="left-sidebar">
+                <div class="new-game">
+                    <select name="discs" id="discSelect">
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <button id="newGameBtn">New Game</button>
+                </div>
+                <div class="speed">
+                    <p>Speed</p>
+                    <input type="range" step="1" max="100" value="100" id="speedRange" />
+                </div>
+                <div class="buttons">
+                    <button id="startTimerBtn">Start Timer</button>
+                    <button id="btnVerify">Verify my game</button>
+                    <button id="btnSolve">Solve</button>
+                </div>
+                <div id="timer">00:00:00</div>
+            </div>
+            <div class="stage">
+                <div class="tower">
+                    <div class="stem"></div>
+                    <div class="plate"></div>
+                </div>
+                <div class="tower">
+                    <div class="stem"></div>
+                    <div class="plate"></div>
+                </div>
+                <div class="tower">
+                    <div class="stem"></div>
+                    <div class="plate"></div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+        <div class="audio-player">
+            <audio id="audio" autoplay loop>
+                <source src="magical-wonderland-of-smiles-ai-205292.mp3" type="audio/mpeg" />
+                <source src="magical-wonderland-of-smiles-ai-205292.ogg" type="audio/ogg" />
+            </audio>
+            <button id="playPauseBtn" class="control-btn">▶️</button>
+            <div class="progress-container">
+                <input type="range" id="progressBar" value="0" max="100" />
+            </div>
+            <div class="time"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></div>
+            <button id="muteBtn" class="control-btn">🔊</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" />
+        </div>
+    </body>
+</html>
